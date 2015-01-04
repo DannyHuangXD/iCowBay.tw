@@ -1,0 +1,152 @@
+<html>
+<head>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.4/d3.min.js"></script>
+
+</head>
+<meta charset="utf-8">
+<body>
+
+<div id="pieChart"></div>
+
+<script>
+var pie = new d3("pieChart", {
+	"header": {
+		"title": {
+			"text": "靠北北大",
+			"color": "#000000",
+			"fontSize": 35,
+			"font": "exo"
+		},
+		"subtitle": {
+			"text": "靠北北大中靠北的比例",
+			"color": "#e61c1c",
+			"font": "open sans"
+		}
+	},
+	"footer": {
+		"color": "#999999",
+		"fontSize": 10,
+		"font": "open sans",
+		"location": "bottom-left"
+	},
+	"size": {
+		"canvasWidth": 600,
+		"pieInnerRadius": "33%",
+		"pieOuterRadius": "90%"
+	},
+	"data": {
+		"sortOrder": "value-desc",
+		"content": [
+			{
+				"label": "小米電源",
+				"value": 20,
+				"color": "#2383c1"
+			},
+			{
+				"label": "單身",
+				"value": 20,
+				"color": "#64a61f"
+			},
+			{
+				"label": "小編",
+				"value": 3,
+				"color": "#7b6788"
+			},
+			{
+				"label": "法院閱覽室",
+				"value": 15,
+				"color": "#a05c56"
+			},
+			{
+				"label": "期末考",
+				"value": 23,
+				"color": "#961919"
+			},
+			{
+				"label": "人際關係",
+				"value": 34,
+				"color": "#d8d239"
+			},
+			{
+				"label": "北大團購",
+				"value": 14,
+				"color": "#e98125"
+			},
+			{
+				"label": "北大居民",
+				"value": 15,
+				"color": "#d0743c"
+			},
+			{
+				"label": "靠北老師",
+				"value": 18,
+				"color": "#635122"
+			},
+			{
+				"label": "靠北同學",
+				"value": 34,
+				"color": "#6ada6a"
+			},
+			{
+				"label": "靠北校狗",
+				"value": 12,
+				"color": "#0b6197"
+			}
+		]
+	},
+	"labels": {
+		"outer": {
+			"format": "label-value2",
+			"hideWhenLessThanPercentage": 1
+		},
+		"inner": {
+			"hideWhenLessThanPercentage": 3
+		},
+		"mainLabel": {
+			"fontSize": 11
+		},
+		"percentage": {
+			"color": "#ffffff",
+			"font": "exo",
+			"decimalPlaces": 0
+		},
+		"value": {
+			"color": "#adadad",
+			"font": "helvetica",
+			"fontSize": 11
+		},
+		"lines": {
+			"enabled": true
+		}
+	},
+	"tooltips": {
+		"enabled": true,
+		"type": "placeholder",
+		"string": "{label}: {value}, {percentage}%",
+		"styles": {
+			"fadeInSpeed": 445,
+			"backgroundOpacity": 0.93,
+			"font": "exo"
+		}
+	},
+	"effects": {
+		"load": {
+			"speed": 900
+		},
+		"pullOutSegmentOnClick": {
+			"effect": "linear",
+			"speed": 440,
+			"size": 15
+		}
+	},
+	"misc": {
+		"colors": {
+			"background": "#ffffff",
+			"segmentStroke": "#000000"
+		}
+	}
+});
+</script>
+
+</body>
+</html>

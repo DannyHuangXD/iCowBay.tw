@@ -2,7 +2,6 @@
 <html>
 <body>
     <?php
-        echo "FAAAAAAAAAAP";
         $mysqli = new mysqli('raspi', 'piusr', 'rpi', 'raspi' ,'article');
         if($mysqli -> connect_error{
         die('Connect Error('. $mysqli->connect_errno .')' . $mysqli -> connect-error);

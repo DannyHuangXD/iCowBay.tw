@@ -10,7 +10,7 @@
         echo "<tr><td height='179' colspan='2' align='left' valign='top'>留言內容:$sql_content.</td></tr>" ;
 }
         echo "</tr>";
-        $mysqli = new mysqli('raspi', 'piusr', 'rpi', 'raspi' ,'article');
+        $mysqli = new mysqli('localhost', 'piusr', 'raspi', 'article');
         if($mysqli -> connect_error{
         die('Connect Error('. $mysqli->connect_errno .')' . $mysqli -> connect-error);
         }

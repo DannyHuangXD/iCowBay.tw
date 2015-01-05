@@ -30,7 +30,7 @@
         $posttime = addslashes($posttime);
         $content = addslashes($content);
     }
-    @ $db = new mysqli('localhost', 'test', 'test123', 'play');
+    @ $db = new mysqli('localhost', 'piusr', 'raspi', 'article');
 
     if (mysqli_connect_errno()){
         echo '錯誤:您所連的資料庫正在大號中,請稍後再連!';

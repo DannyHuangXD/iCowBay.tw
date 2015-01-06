@@ -13,16 +13,14 @@
         while($record= mysqli_fetch_array($result)){
         $sql_id = $record["artiID"];
         $sql_content = $record["artitext"];
-        $sql_podttime = $record["post_time"];
+        $sql_posttime = $record["post_time"];
         }
         $mysqli->close();
             
         echo "<tr>" ;
-        echo "<td width='316' height='21' align='center'>留言編號:$sql_id.</td>" ;
-        echo "<td width='316' height='21' align='center'>留言者姓名:$sql_name.</td></tr>" ;
-        echo "<tr><td width='316' height='21' align='center'>MAIL:$sql_email.</td>" ;
-        echo "<td width='316' height='21' align='center'>留言時間:$sql_posttime.</td></tr>" ;
-        echo "<tr><td height='179' colspan='2' align='left' valign='top'>留言內容:$sql_content.</td></tr>" ;
+        echo "<td width='316' height='21' align='center'>留言編號:$sql_id</td>" ;
+        echo "<td width='316' height='21' align='center'>留言時間:$sql_posttime</td></tr>" ;
+        echo "<tr><td height='179' colspan='2' align='left' valign='top'>留言內容:$sql_content</td></tr>" ;
         echo "</tr>";
 
     ?>

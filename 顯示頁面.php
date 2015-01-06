@@ -7,16 +7,13 @@
         if(mysqli_connect_errno()){
         echo "Failed to connect to database" . mysqli_connect_error();
         }
-        echo "Success.";
-        $sql = "SELECT * FROM post";
+        $sql = "SELECT * FROM artiInfo WHERE artiID=1";
         echo "<table border=2>";
-        $result = mysqli_query($sql,) or die("invalid query");
-        while($record=mysqli_fetch_array($result,)){
-        $sql_id = $record[ "id"] ;
-        $sql_name = $record[ "name"] ;
-        $sql_email = $record[ "email"] ;
-        $sql_posttime = $record[ "posttime"] ;
-        $sql_content = $record[ "content"] ;
+        $result = $mysqli->query($sql) or die("ERROR");
+        while($record= mysqli_fetch_array($result)){
+        $sql_id = $record["artiID"];
+        $sql_content = $record["artitext"];
+        $sql_podttime = $record["post_time"];
         }
         $mysqli->close();
             

@@ -18,9 +18,9 @@
         $mysqli->close();
             
         echo "<tr>" ;
-        echo "<td width='316' height='21' align='center'>留言編號:$sql_id</td>" ;
-        echo "<td width='316' height='21' align='center'>留言時間:$sql_posttime</td></tr>" ;
-        echo "<tr><td height='179' colspan='2' align='left' valign='top'>留言內容:$sql_content</td></tr>" ;
+        echo "<td width='316' height='21' align='center'>#$sql_id</td>" ;
+        echo "<td width='316' height='21' align='center'>Time:$sql_posttime</td></tr>" ;
+        echo "<tr><td height='179' colspan='2' align='left' valign='top'>$sql_content</td></tr>" ;
         echo "</tr>";
 
     ?>

@@ -3,15 +3,15 @@
     <head><meta charset = 'utf-8'></head>
 <body>
     <?php
-        $mysqli = new mysqli('localhost', 'piusr', 'raspi', 'article');
-        if($mysqli -> connect_error{
-        die('Connect Error('. $mysqli->connect_errno .')' . $mysqli -> connect-error);
+        $mysqli = mysqli_connect('localhost', 'root', 'rpi', 'article');
+        if(mysqli_connect_errno()){
+        echo "Failed to connect to database" . mysqli_connect_error();
         }
-        echo 'Success' . $mysqli->host_info . "\n";
+        echo "Success.";
         $sql = "SELECT * FROM post";
         echo "<table border=2>";
-        $result = mysql_query($sql) or die("invalid query");
-        while($record=mysql_fetch_array($result)){
+        $result = mysqli_query($sql,) or die("invalid query");
+        while($record=mysqli_fetch_array($result,)){
         $sql_id = $record[ "id"] ;
         $sql_name = $record[ "name"] ;
         $sql_email = $record[ "email"] ;

@@ -9,6 +9,15 @@
 <div id="pieChart"></div>
 
 <script>
+var mySquare=svg.append("rect")
+  .attr("x",60)
+  .attr("y",60)
+  .attr("width",60)
+  .attr("height",60);
+
+  mySquare
+  .transition()
+  .attr("width",120);
 var pie = new d3pie("pieChart", {
 	"header": {
 		"title": {

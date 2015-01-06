@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.1/d3.min.js"></script>
+    <title>iCowBay.tw</title>
+    <meta charset = "utf-8">
+</head>
+<body>
+    <div id="rekt"></div>
+    <div id ="fekt"></div>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script>
+        var w = 300, h = 300;
+        var container = d3.select("#rekt")
+                        .append("svg")
+                        .attr("width", w)
+                        .attr("height", h);
+        container.append("rect")
+                 .style("stroke", "black")
+                 .style("fill", "lightblue")
+                 .attr("width", 60)
+                 .attr("height", 45)
+                 .on("click", function(){
+                d3.select(this).transition()
+                           .duration(500)
+                           .attr("width", 120)
+                           .attr("height", 90)
+                           .style("stroke", "red")});
+
+    </script>
+</body>
+</html>

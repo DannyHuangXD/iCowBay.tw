@@ -16,7 +16,7 @@
         $sql_posttime = $record["post_time"];
         }
         $mysqli->close();
-            
+
         echo "<tr>" ;
         echo "<td width='316' height='21' align='center'>#$sql_id</td>" ;
         echo "<td width='316' height='21' align='center'>Time:$sql_posttime</td></tr>" ;

@@ -27,8 +27,8 @@
             </tr>
             <?php while($row = mysqli_fetch_array($result)){ ?>
             <tr>
-                <td><?=$rows['artiID']?></td>
-                <td><?=$rows['artitext']?></td>
+//                <td><?php$rows['artiID']?></td>
+//                <td><?php$rows['artitext']?></td>
             </tr>
             <?php } ?>
             <tr>

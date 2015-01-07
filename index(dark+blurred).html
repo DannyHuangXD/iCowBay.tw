@@ -11,7 +11,7 @@
 <body>
     <nav class="navbar navbar-default">
   <div class="container-fluid">
-      <div class="navbar navbar-inverse">  
+      <div class="navbar navbar-inverse">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -82,15 +82,15 @@
                  .on("click", function(){
              d3.select("body").style("opacity", 0.5)
                 d3.select(this).transition()
-                            
+
                             .duration(500)
-                            
+
                             .attr("x",250)
-                            
+
                             .attr("width",600)
-                            .attr("height",450)                                   
+                            .attr("height",450)
                             .style("stroke", "red")})
-            
+
                  .on("dblclick",function(){
             d3.select("body").style("opacity", 1)
                 d3.select(this).transition()

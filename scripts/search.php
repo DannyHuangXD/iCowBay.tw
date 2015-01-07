@@ -8,7 +8,7 @@
                 require "connect.php";
                 $sql_kw = $_REQUEST['sqlkw']; //keyword search variable
                 echo $sql_kw;
-                $sql_search = "SELECT * FROM artiInfo WHERE artitext LIKE '%$sql_kw%'";
+                $sql_search = "SELECT * FROM artiInfo WHERE artitext LIKE '%{$sql_kw}%'";
                 $result = $mysqli->query($sql_search);
                 $rows = mysqli_num_rows($result);
                 mysqli_free_result($result);

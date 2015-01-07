@@ -4,6 +4,7 @@
     </head>
     <body>
         <table width = "900" border = "0.5" cellpadding = "1">
+            <p>a</p>
             <?php
                 require "connect.php";
                 $sql_kw = $_REQUEST['sqlkw']; //keyword search variable
@@ -15,7 +16,7 @@
                 $pageSize = 3;
                 $pageCount = celi($rows / pageSize);
             ?>
-
+<p>b</p>
         </table>
     </body>
 </html>

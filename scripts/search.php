@@ -6,8 +6,8 @@
         <table width = "900" border = "0.5" cellpadding = "1">
             <?php
                 require "connect.php";
-                echo $_REQUEST['sqlkw'];
                 $sql_kw = $_REQUEST['sqlkw']; //keyword search variable
+                echo $sql_kw;
                 $sql_search = "SELECT * FROM artiInfo WHERE artitext LIKE '%$sql_kw%'";
                 $result = $mysqli->query($sql_search);
                 $rows = mysqli_num_rows($result);

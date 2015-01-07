@@ -15,7 +15,7 @@
                 $pageSize = 3;
                 $pageCount = celi($rows / pageSize);
             ?>
-//           <?php if($rows){?>
+           <?php if($rows){?>
             <tr>
                 <td>artiID</td>
                 <td>Content</td>
@@ -26,8 +26,8 @@
             </tr>
             <?php while($row = mysqli_fetch_array($result)){ ?>
             <tr>
-                <td><?=$row['artiID']?></td>
-                <td><?=$row['artitext']?></td>
+                <td><?=$rows['artiID']?></td>
+                <td><?=$rows['artitext']?></td>
             </tr>
             <?php } ?>
             <tr>
@@ -41,11 +41,11 @@
                 ?>
                 </td>
             </tr>
-//            <?php } else{ ?>
+            <?php } else{ ?>
             <tr>
                 <td> Your search result is rip in pepperonis</td>
             </tr>
-//            <?php } ?>
+            <?php } ?>
         </table>
     </body>
 </html>

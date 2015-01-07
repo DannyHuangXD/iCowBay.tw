@@ -14,6 +14,7 @@
                 mysqli_free_result($result);
                 $pageSize = 3;
                 $pageCount = celi($rows / pageSize);
+                echo $rows;
             ?>
            <?php if($rows){?>
             <tr>

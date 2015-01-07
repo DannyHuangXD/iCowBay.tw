@@ -1,10 +1,5 @@
-<html>
-    <head><meta charset="utf-8"></head>
-    <body>
-        <div id = "search_bar">
-            <p> search: </p>
-            <?php echo $_REQUEST['search']; ?>
-            </br>
-        </div>
-    </body>
-</html>
+<?php
+    require "connect.php";
+    $sql_kw; //keyword search variable
+    $sql_search = mysqli_query("SELECT artitext FROM artiInfo WHERE artitext LIKE '%$sql_kw%'");
+?>

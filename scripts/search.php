@@ -8,10 +8,10 @@
                 require "connect.php";
                 $sql_kw = $_REQUEST['sqlkw']; //keyword search variable
                 $sql_search = "SELECT * FROM artiInfo WHERE artitext LIKE '%$sql_kw%'";
-                $result = $mysqli->query($sql_search);
+                $result = $mysqli->query($sql_search) or die ("ERROR");
                 $rows = mysqli_num_rows($result);
                 $pageSize = 3;
-                $pageCount = celi($rows / pageSize);
+                $pageCount = celi($rows / $pageSize);
             ?>
            <?php if($rows){?>
             <tr>

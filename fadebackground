@@ -1,0 +1,22 @@
+showBackground(back,50);
+
+
+
+
+
+function showBackground(obj,endInt)
+{
+if(isIe)
+{
+obj.filters.alpha.opacity+=1;
+if(obj.filters.alpha.opacity<endInt)
+{
+setTimeout(function(){showBackground(obj,endInt)},5);
+}
+}else{
+var al=parseFloat(obj.style.opacity);al+=0.01;
+obj.style.opacity=al;
+if(al<(endInt/100))
+{setTimeout(function(){showBackground(obj,endInt)},5);}
+}
+}

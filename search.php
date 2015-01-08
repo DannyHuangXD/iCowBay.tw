@@ -2,13 +2,13 @@
     require "scripts/connect.php";
     if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
     $start_from = ($page-1) * 20;
+    $sql_kw = $_REQUEST['sqlkw']; //keyword search variable
     $sql = "select COUNT(*) FROM artiInfo WHERE artitext LIKE '%$sql_kw%';";
+    $sql_search = "SELECT * FROM artiInfo WHERE artitext LIKE '%$sql_kw%';";
     $result = $mysqli->query($sql);
     $amount = $result->fetch_row();
-    $sql_kw = $_REQUEST['sqlkw']; //keyword search variable
-    $sql_search = "SELECT * FROM artiInfo WHERE artitext LIKE '%$sql_kw%';";
-    $result = $mysqli->query($sql_search);
-    $rows = mysqli_num_rows($result);
+    $results = $mysqli->query($sql_search);
+    $rows = mysqli_num_rows($results);
 
 ?>
 
@@ -43,7 +43,7 @@
                 <td>Date-Time</td>
             </tr>
             <?php
-            while ($row = mysqli_fetch_assoc($result)){?>
+            while ($row = mysqli_fetch_assoc($results)){?>
                 <tr>
                     <td><? echo "<a href='content.php?id=".$row["artiID"]."'>".$row["artiID"]."</a>"; ?></td>
                     <td><? echo $row["artitext"]; ?></td>

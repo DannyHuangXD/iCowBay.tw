@@ -34,7 +34,7 @@
     </head>
     <body>
         <div id = "header" class="header"></div>
-        <h1 class="page-header">Sorted by "<?php echo ＄top;?>":</h1>
+        <h1 class="page-header">Sorted by "<?php echo $top;?>":</h1>
         <table class="table table-hover">
             <tr>
                 <td>Post-ID</td>

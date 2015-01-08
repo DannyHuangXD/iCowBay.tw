@@ -43,14 +43,8 @@
         <?php
             $sql = "select COUNT(*) FROM artiInfo;";
             $result = $mysqli->query($sql);
-            $rowz = mysqli_fetch_row($result);
-            $total_records = $rowz[0];
-            $total_pages = ceil($rowz / 20);
-            echo "<nav><ul class = 'pagination'>";
-            for ($i=1; $i<=$total_pages; $i++) {
-                echo "<li><a href='search.php?page=".$i."'>".$i."</a></li>";
-            }
-            echo "</ul></nav>";
+            $amount = mysqli_num_rows($result);
+            echo "<span class='label label-info'>".$amount." results </span>";
         ?>
     </body>
 </html>

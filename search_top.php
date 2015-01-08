@@ -23,7 +23,7 @@
             $sql = "SELECT * FROM artiInfo ORDER BY view DESC LIMIT 0, 20;";
         }
         else if($top == 'new'){
-            $sql = "SELECT * FROM artiInfo ORDER BY artiID DESC LIMIT 10, 20;";
+            $sql = "SELECT * FROM artiInfo ORDER BY artiID DESC LIMIT 0, 20;";
         }
         else if($top == 'likes'){
             $sql = "SELECT * FROM artiInfo ORDER BY likes DESC LIMIT 0, 20;";

@@ -15,7 +15,7 @@
     </head>
     <body>
         <div id = "header" class="header"></div>
-        <table width = "900" border = "0.5" cellpadding = "1">
+        <table class="table table-hover">
             <?php
                 require "scripts/connect.php";
                 if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
@@ -39,12 +39,14 @@
         <?php
             $sql = "select count(*) FROM artiInfo;";
             $result = $mysqli->query($sql);
-            $row = mysqli_fetch_row($result);
+            $rowz = mysqli_fetch_row($result);
             $total_records = $row[0];
-            $total_pages = ceil($row / 20);
+            $total_pages = ceil($rowz / 20);
+            echo "<ul>";
             for ($i=1; $i<=$total_pages; $i++) {
-                echo "<a href='search.php?page=".$i."'>".$i."</a>";
+                echo "<li><a href='search.php?page=".$i."'>".$i."</a></li>";
             }
+            echo "</ul>";
         ?>
     </body>
 </html>

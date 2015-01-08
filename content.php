@@ -29,6 +29,7 @@
             </div>
             <div class="panel-body">
                 <? echo $record['artitext']; ?>
+                <? echo $plusID; ?>
             </div>
             <div class="panel-footer">
                 <? echo "Views: ".$record['view']; ?>

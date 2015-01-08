@@ -1,40 +1,16 @@
-<?php
-    require "scripts/connect.php";
-    if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
-    $start_from = ($page-1) * 20;
-    $sql_kw = $_REQUEST['sqlkw']; //keyword search variable
-    $search_by = $_GET['lookup'];
-    $sql_search = "SELECT * FROM artiInfo WHERE artitext LIKE '%$sql_kw%';";
-    $results = $mysqli->query($sql_search);
-    $rows = mysqli_num_rows($results);
-    function echo_content($x){
-        if(strlen($x)<=30){
-            echo $x;
-        }
-        else if(strlen($x) > 30 && strpos($x,"</a>")){
-            $y=substr($x,0,strpos($x,"</a>")).'...';
-            echo $y;
-        }
-        else if(strlen($x) > 30 && strpos($x,"</img>")){
-            $y=substr($x,0,strpos($x,"</img>")).'...';
-            echo $y;
-        }
-        else{
-            $y=substr($x,0,30).'...';
-            echo $y;
-        }
-    }
-?>
-
+<!DOCTYPE HTML>
 <html>
     <head>
-        <meta charset="utf-8">
-        <title>Results</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+        <meta charset = "utf-8">
+        <title>Post New Article</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.1/d3.min.js"></script>
     <script>
+    function clearText(){
+        document.getElementById("context").value = "";
+    }
     $(function(){
       $("#header").load("header.html");
       $("#footer").load("footer.html");
@@ -42,43 +18,24 @@
     </script>
     </head>
     <body>
-        <div id = "header" class="header"></div>
-        <h1 class="page-header">
-            Results of "<?php echo $_REQUEST['sqlkw'];?>":
-            <?php
-                echo "<span class='badge'>".$amount[0]."</span>"
-            ;?>
-        </h1>
-        <table class="table table-hover">
-
-            <tr>
-                <td>Post-ID</td>
-                <td>Content</td>
-                <td>Date-Time</td>
-                <td>By</td>
-                <td>Views</td>
-            </tr>
-            <?php
-            while ($row = mysqli_fetch_assoc($results)){?>
-                <tr>
-                    <td><? echo "<a href='content.php?id=".$row["artiID"]."'>#".$row["artiID"]."</a>"; ?></td>
-                    <td><? echo echo_content($row["artitext"]); ?></td>
-                    <td><? echo $row["post_time"]; ?></td>
-                    <td><? echo $row["id"]; ?></td>
-                    <td><? echo $row["view"]; ?></td>
-                </tr>
-            <? }; ?>
-        </table>
-        <?php
-            $result = $mysqli->query($sql);
-            $row = mysql_fetch_row($result);
-            $total_records = $row[0];
-            $total_pages = ceil($total_records / 20);
-            $amount = $result->fetch_row();
-            $sql = "select COUNT(*) FROM artiInfo WHERE artitext LIKE '%$sql_kw%';";
-            for ($i=1; $i<=$total_pages; $i++) {
-                        echo "<a href='search.php?page=".$i."&sqlkw=".$sql_kw."'>".$i."</a> ";
-            };
-        ?>
+        <div class="header" id="header"></div>
+        <div class="alert alert-warning" role="alert" style="width:630px;">Remember, if you leave ID slot empty, your post will be submitted as ID <b> anonymous</b> as default.</div>
+        <div class="page-header"><h1>New article</h1></div>
+        <div id = "text_panel">
+            <input type="button" class="btn btn-default" value="url" onclick="javascript:hyperlink();">
+        </div>
+        <div id = "create_post">
+            <form action="new_post.php" method="POST">
+            <div class="form-group">
+                <input class="form-control" id="user_id" name="user_id" maxlength="20" rows="1" style="width:185px;" placeholder="Your nickname here"></textarea>
+            </div>
+            <textarea class="form-control" id="context" name="content" rows="8" placeholder="Your spicy memes :)"></textarea>
+            <br /><br />
+            <fieldset class="center" id="submit">
+                <input type="button" class="btn btn-default navbar-btn" value="Clear" onclick="javascript:clearText();">
+                <input class="btn btn-default navbar-btn" type="submit" value= "Submit" />
+            </fieldset>
+            </form>
+        </div>
     </body>
 </html>

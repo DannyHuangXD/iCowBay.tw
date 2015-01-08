@@ -34,6 +34,10 @@
         if(strlen($x)<=30){
             echo $x;
         }
+        else if(strlen($x) > 30 && strpos($x,"</a>")){
+            $y=substr($x,0,strpos($x,"</a>")).'...';
+            echo $y;
+        }
         else{
             $y=substr($x,0,30).'...';
             echo $y;

@@ -42,7 +42,7 @@
             $row = mysqli_fetch_row($result);
             $total_records = $row[0];
             $total_pages = ceil($total_records / 20);
-            echo "<ul>";
+            echo "<ul class='success'>";
             for ($i=1; $i<=$total_pages; $i++) {
                 echo "<li class='success'><a href='search.php?page=".$i."'>".$i."</a></li>";
             };

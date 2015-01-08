@@ -29,24 +29,22 @@
             <?php
             while ($row = mysqli_fetch_assoc($result)){
             ?>
-                <tr class="info">
-                    <td class="info"><? echo $row["artiID"]; ?></td>
-                    <td class="info"><? echo $row["artitext"]; ?></td>
-                    <td class="info"><? echo $row["post_time"]; ?></td>
+                <tr>
+                    <td><? echo $row["artiID"]; ?></td>
+                    <td><? echo $row["artitext"]; ?></td>
+                    <td><? echo $row["post_time"]; ?></td>
                 </tr>
             <? }; ?>
         </table>
         <?php
-            $sql = "select count(*) FROM artiInfo";
+            $sql = "select count(*) FROM artiInfo;";
             $result = $mysqli->query($sql);
             $row = mysqli_fetch_row($result);
             $total_records = $row[0];
             $total_pages = ceil($row / 20);
-            echo "<nav><ul class='pagination'>"
             for ($i=1; $i<=$total_pages; $i++) {
-                echo "<li><a href='search.php?page=".$i."'>".$i."</a></li> ";
-            };
-            echo "</ul></nav>";
+                echo "<a href='search.php?page=".$i."'>".$i."</a>";
+            }
         ?>
     </body>
 </html>

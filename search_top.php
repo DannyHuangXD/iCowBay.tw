@@ -30,7 +30,7 @@
                 else if($top == 'new'){
                     $sql = "SELECT * FROM artiInfo ORDER BY artiID DESC;";
                 }
-                else if($top == 'like'){
+                else if($top == 'likes'){
                     $sql = "SELECT * FROM artiInfo ORDER BY like DESC;";
                 }
                 $result = $mysqli->query($sql);

@@ -22,7 +22,7 @@
         $id = 1 + mysqli_num_rows($result);
         $contents = str_replace(chr(13).chr(10),"<br>", $_POST['content']);
         $usr_id = $_POST['user_id'];
-        if($_REQUEST['user_id'] =""){
+        if(empty($_REQUEST['user_id'])){
             $usr_id = "anonymous";
         }
         $insert_sql = "INSERT INTO artiInfo" ."(id, artiID, artitext)"."VALUES('$usr_id' ,'$id', '$contents');";

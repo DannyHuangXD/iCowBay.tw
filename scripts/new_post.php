@@ -1,9 +1,7 @@
 <?php
     require 'connect.php';
     $artiID = $mysqli->query("SELECT COUNT(*) from artiInfo;");
-    print($artiID);
-    $ID = $_POST["artiID"];
     $contents = $_POST["content"];
-    $insert_sql = "INSERT INTO artiInfo (artiID, artitext) VALUES($ID,$contents);";
+    $insert_sql = "INSERT INTO artiInfo (artiID, artitext) VALUES($artiID,$contents);";
     $result = $mysqli->query($insert_sql);
 ?>

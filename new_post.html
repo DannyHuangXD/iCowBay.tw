@@ -28,8 +28,9 @@
             <input type="button" class="btn btn-default navbar-btn" value="<br>" onclick="javascript:brbr();">
         </div>
         <div id = "create_post">
-            <form action="new_post.php" method="POST"><p>
-            <textarea class="form-control" id="context" name = "content" rows="8" placeholder="Your spicy memes :)"></textarea></p>
+            <form action="new_post.php" method="POST">
+            <textarea class="form-control" id="user_id" name="user_id" rows="1" cols="15" placeholder="blank = anonymous">anonymous</textarea>
+            <textarea class="form-control" id="context" name = "content" rows="8" placeholder="Your spicy memes :)"></textarea>
             <br />
             <fieldset class="center" id="submit">
                 <input type="button" class="btn btn-default navbar-btn" value="Clear" onclick="javascript:clearText();">

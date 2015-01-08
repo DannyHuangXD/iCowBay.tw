@@ -11,9 +11,6 @@
     function clearText(){
         document.getElementById("context").value = "";
     }
-    function brbr(){
-        document.getElementById("context").value += "<br>";
-    }
     $(function(){
       $("#header").load("header.html");
       $("#footer").load("footer.html");
@@ -22,14 +19,16 @@
     </head>
     <body>
         <div class="header" id="header"></div>
+        <div class="alert alert-warning" role="alert" style="width:630px;">Remember, if you leave ID slot empty, your post will be submitted as ID <b> anonymous</b> as default.</div>
         <div class="page-header"><h1>New article</h1></div>
         <div id = "text_panel">
             <input type="button" class="btn btn-default navbar-btn" value="url" onclick="javascript:hyperlink();">
-            <input type="button" class="btn btn-default navbar-btn" value="<br>" onclick="javascript:brbr();">
         </div>
         <div id = "create_post">
             <form action="new_post.php" method="POST">
-            <textarea class="form-control" id="user_id" name="user_id" rows="1" placeholder="blank as anonymous"></textarea>
+            <div class="form-group">
+                <input class="form-control" id="user_id" name="user_id" maxlength="20" rows="1" style="width:185px;" placeholder="Your nickname here"></textarea>
+            </div>
             <textarea class="form-control" id="context" name="content" rows="8" placeholder="Your spicy memes :)"></textarea>
             <br /><br />
             <fieldset class="center" id="submit">

@@ -17,7 +17,7 @@
     <body>
         <div id="header" class="header"></div>
         <?php
-        require 'connect.php';
+        require 'scripts/connect.php';
             $result = $mysqli->query("SELECT * from artiInfo;");
         $id = 1 + mysqli_num_rows($result);
         $contents = $_POST['content'];

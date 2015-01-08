@@ -42,11 +42,9 @@
             $row = mysqli_fetch_row($result);
             $total_records = $row[0];
             $total_pages = ceil($row / 20);
-            echo "<nav><ul class='pagination'>"
             for ($i=1; $i<=$total_pages; $i++) {
-                echo "<li><a href='search.php?page=".$i."'>".$i."</a></li> ";
+                echo "<li class='success'><a href='search.php?page=".$i."'>".$i."</a></li> ";
             };
-            echo "</ul></nav>";
         ?>
     </body>
 </html>

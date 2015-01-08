@@ -19,7 +19,7 @@
         </script>
     </head>
     <body>
-        <div class="header"></div>
+        <div id="header"></div>
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h2 class="panel-title"><? echo $record['artiID']; ?></h2>

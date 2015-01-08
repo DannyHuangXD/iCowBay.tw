@@ -89,16 +89,17 @@
                         .append("svg")
                         .attr("width", w)
                         .attr("height", h);
+        //   1
         container.append("rect")
                  .style("fill", "lightblue")
                  .attr("width", 250).attr("height", 150)
-                 .attr("x",50).attr("y",10)
+                 .attr("x",110).attr("y",10)
                  .on("click", function(){
                  d3.select("body").style("opacity", 0.5)
 
                     d3.select(this).transition()
                             .duration(500)
-                            .attr("x",250)
+                            .attr("x",250).attr("y",0)
                             .attr("width",600).attr("height",400)                            
                             .style("stroke", "black")})
                  .on("dblclick",function(){
@@ -107,19 +108,19 @@
                     d3.select(this).transition()
                             .duration(500)
                             .attr("width",250).attr("height",150)
-                            .attr("x",50).attr("y",10)
+                            .attr("x",110).attr("y",10)
                             .style("stroke")});
         //   2
         container.append("rect")
                  .style("fill", "lightblue")
                  .attr("width", 250).attr("height", 150)
-                 .attr("x",350).attr("y",10)
+                 .attr("x",410).attr("y",10)
                  .on("click", function(){
                              d3.select("body").style("opacity", 0.5)
 
                     d3.select(this).transition()
                             .duration(500)
-                            .attr("x",250)
+                            .attr("x",250).attr("y",0)
                             .attr("width",600).attr("height",400)                            
                             .style("stroke", "black")})
                  .on("dblclick",function(){
@@ -128,19 +129,19 @@
                     d3.select(this).transition()
                             .duration(500)
                             .attr("width",250).attr("height",150)
-                            .attr("x",350).attr("y",10)
+                            .attr("x",410).attr("y",10)
                             .style("stroke")});
         //   3
         container.append("rect")
                  .style("fill", "lightblue")
                  .attr("width", 250).attr("height", 150)
-                 .attr("x",650).attr("y",10)
+                 .attr("x",710).attr("y",10)
                  .on("click", function(){
                              d3.select("body").style("opacity", 0.5)
 
                     d3.select(this).transition()
                             .duration(500)
-                            .attr("x",250)
+                            .attr("x",250).attr("y",0)
                             .attr("width",600).attr("height",400)                            
                             .style("stroke", "black")})
                  .on("dblclick",function(){
@@ -149,13 +150,13 @@
                     d3.select(this).transition()
                             .duration(500)
                             .attr("width",250).attr("height",150)
-                            .attr("x",650).attr("y",10)
+                            .attr("x",710).attr("y",10)
                             .style("stroke")});
         //   4
         container.append("rect")
                  .style("fill", "lightblue")
                  .attr("width", 250).attr("height", 150)
-                 .attr("x",50).attr("y",210)
+                 .attr("x",110).attr("y",210)
                  .on("click", function(){
                              d3.select("body").style("opacity", 0.5)
 
@@ -170,13 +171,13 @@
                     d3.select(this).transition()
                             .duration(500)
                             .attr("width",250).attr("height",150)
-                            .attr("x",50).attr("y",210)
+                            .attr("x",110).attr("y",210)
                             .style("stroke")});
         //   5
         container.append("rect")
                  .style("fill", "lightblue")
                  .attr("width", 250).attr("height", 150)
-                 .attr("x",350).attr("y",210)
+                 .attr("x",410).attr("y",210)
                  .on("click", function(){
                              d3.select("body").style("opacity", 0.5)
 
@@ -191,13 +192,13 @@
                     d3.select(this).transition()
                             .duration(500)
                             .attr("width",250).attr("height",150)
-                            .attr("x",350).attr("y",210)
+                            .attr("x",410).attr("y",210)
                             .style("stroke")});
         //   6
         container.append("rect")
                  .style("fill", "lightblue")
                  .attr("width", 250).attr("height", 150)
-                 .attr("x",650).attr("y",210)
+                 .attr("x",710).attr("y",210)
                  .on("click", function(){
                              d3.select("body").style("opacity", 0.5)
 
@@ -212,13 +213,13 @@
                     d3.select(this).transition()
                             .duration(500)
                             .attr("width",250).attr("height",150)
-                            .attr("x",650).attr("y",210)
+                            .attr("x",710).attr("y",210)
                             .style("stroke")});
         //   7
         container.append("rect")
                  .style("fill", "lightblue")
                  .attr("width", 250).attr("height", 150)
-                 .attr("x",50).attr("y",410)
+                 .attr("x",110).attr("y",410)
                  .on("click", function(){
                              d3.select("body").style("opacity", 0.5)
 
@@ -233,13 +234,13 @@
                     d3.select(this).transition()
                             .duration(500)
                             .attr("width",250).attr("height",150)
-                            .attr("x",50).attr("y",410)
+                            .attr("x",110).attr("y",410)
                             .style("stroke")});
         //   8
         container.append("rect")
                  .style("fill", "lightblue")
                  .attr("width", 250).attr("height", 150)
-                 .attr("x",350).attr("y",410)
+                 .attr("x",410).attr("y",410)
                  .on("click", function(){
                              d3.select("body").style("opacity", 0.5)
 
@@ -254,13 +255,13 @@
                     d3.select(this).transition()
                             .duration(500)
                             .attr("width",250).attr("height",150)
-                            .attr("x",350).attr("y",410)
+                            .attr("x",410).attr("y",410)
                             .style("stroke")});
         //   9
         container.append("rect")
                  .style("fill", "lightblue")
                  .attr("width", 250).attr("height", 150)
-                 .attr("x",650).attr("y",410)
+                 .attr("x",710).attr("y",410)
                  .on("click", function(){
                              d3.select("body").style("opacity", 0.5)
 
@@ -275,7 +276,7 @@
                     d3.select(this).transition()
                             .duration(500)
                             .attr("width",250).attr("height",150)
-                            .attr("x",650).attr("y",410)
+                            .attr("x",710).attr("y",410)
                             .style("stroke")});
         
        

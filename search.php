@@ -15,15 +15,14 @@
     </head>
     <body>
         <div id = "header"></div>
-        <table border = "0.5" cellpadding = "1">
+        <table width = "900" border = "0.5" cellpadding = "1">
             <?php
                 require "connect.php";
                 if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
                 $start_from = ($page-1) * 20;
                 $sql_kw = $_REQUEST['sqlkw']; //keyword search variable
-                $sql_search = "SELECT * FROM artiInfo WHERE artitext LIKE '%$sql_kw%' LIMIT '$start_from', 20";
+                $sql_search = "SELECT * FROM artiInfo WHERE artitext LIKE '%$sql_kw%';";
                 $result = $mysqli->query($sql_search);
-                $rows = mysqli_num_rows($result);
             ?>
             <tr><td>ID</td><td>content</td></tr>
             <?php

@@ -15,7 +15,7 @@
     </head>
     <body>
         <div id = "header"></div>
-        <table width = "900" border = "0.5" cellpadding = "1">
+        <table border = "0.5" cellpadding = "1">
             <?php
                 require "connect.php";
                 if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
@@ -29,10 +29,10 @@
             <?php
             while ($row = mysqli_fetch_assoc($result)){
             ?>
-                <tr class="info">
-                    <td class="info"><? echo $row["artiID"]; ?></td>
-                    <td class="info"><? echo $row["artitext"]; ?></td>
-                    <td class="info"><? echo $row["post_time"]; ?></td>
+                <tr class="active">
+                    <td class="active"><? echo $row["artiID"]; ?></td>
+                    <td class="active"><? echo $row["artitext"]; ?></td>
+                    <td class="active"><? echo $row["post_time"]; ?></td>
                 </tr>
             <? }; ?>
         </table>
@@ -42,9 +42,9 @@
             $row = mysqli_fetch_row($result);
             $total_records = $row[0];
             $total_pages = ceil($total_records / 20);
-            echo "<ul class='success'>";
+            echo "<ul class='pagination'>";
             for ($i=1; $i<=$total_pages; $i++) {
-                echo "<li class='success'><a href='search.php?page=".$i."'>".$i."</a></li>";
+                echo "<li><a href='search.php?page=".$i."'>".$i."</a></li>";
             };
             echo "</ul>";
         ?>

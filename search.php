@@ -25,7 +25,11 @@
                 $result = $mysqli->query($sql_search);
                 $rows = mysqli_num_rows($result);
             ?>
-            <tr><td>ID</td><td>content</td></tr>
+            <tr>
+                <td>id</td>
+                <td>content</td>
+                <td>Date-time</td>
+            </tr>
             <?php
             while ($row = mysqli_fetch_assoc($result)){
             ?>
@@ -37,16 +41,16 @@
             <? }; ?>
         </table>
         <?php
-            $sql = "select count(*) FROM artiInfo;";
+            $sql = "select COUNT(*) FROM artiInfo;";
             $result = $mysqli->query($sql);
             $rowz = mysqli_fetch_row($result);
-            $total_records = $row[0];
+            $total_records = $rowz[0];
             $total_pages = ceil($rowz / 20);
-            echo "<ul>";
+            echo "<nav><ul class = 'pagination'>";
             for ($i=1; $i<=$total_pages; $i++) {
                 echo "<li><a href='search.php?page=".$i."'>".$i."</a></li>";
             }
-            echo "</ul>";
+            echo "</ul></nav>";
         ?>
     </body>
 </html>

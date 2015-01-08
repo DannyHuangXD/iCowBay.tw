@@ -9,12 +9,7 @@
                 $sql_kw = $_REQUEST['sqlkw']; //keyword search variable
                 $sql_search = "SELECT * FROM artiInfo WHERE artitext LIKE '%$sql_kw%'";
                 $result = $mysqli->query($sql_search);
-                $rows = mysqli_num_rows($result);
-                $pageSize = 3;
-                $pageCount = celi($rows/$pageSize);
-                mysqli_free_result($result);
-                $mysqli->close();
-            ?>
+?>
         </table>
         <p>AAAAAAAA?</p>
     </body>

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.1/d3.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.4.4/d3.min.js"></script>
+    <script src="d3pie.min.js"></script>
+    <meta charset="utf-8">
+    <script src="d3pie.min.js"></script>
+    <meta charset="UTF-8">
+
+     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <title>iCowBay.tw</title>
+    </head>
+<body>
+    <div class="navbar navbar-inverse">
+    
+
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">iCowBay.tw</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="inactive"><a href="#">Login <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Options</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Top 25<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Porularity</a></li>
+            <li><a href="#">Just posted</a></li>
+            <li><a href="#">Most people loves</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn  ">Submit
+        </button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+   
+  </div><!-- /.container-fluid -->
+
+</div>
+    
+
+</script>
+
+</body>
+</html>
+    <div id="rekt"></div>
+    <div id ="fekt"></div>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script>
+        var w = 1000, h = 600  ;
+        var container = d3.select("#rekt")
+                        .append("svg")
+                        .attr("width", w)
+                        .attr("height", h);
+        container.append("rect")
+                 .style("fill", "lightblue")
+                 .attr("width", 250).attr("height", 150)
+                 .attr("x",50).attr("y",10)
+                 .on("click", function(){
+                 d3.select("body").style("opacity", 0.5)
+
+                    d3.select(this).transition()
+                            .duration(500)
+                            .attr("x",250)
+                            .attr("width",600).attr("height",400)                            
+                            .style("stroke", "black")})
+                 .on("dblclick",function(){
+                        d3.select("body").style("opacity", 1)
+
+                    d3.select(this).transition()
+                            .duration(500)
+                            .attr("width",250).attr("height",150)
+                            .attr("x",50).attr("y",10)
+                            .style("stroke")});
+        //   2
+        container.append("rect")
+                 .style("fill", "lightblue")
+                 .attr("width", 250).attr("height", 150)
+                 .attr("x",350).attr("y",10)
+                 .on("click", function(){
+                             d3.select("body").style("opacity", 0.5)
+
+                    d3.select(this).transition()
+                            .duration(500)
+                            .attr("x",250)
+                            .attr("width",600).attr("height",400)                            
+                            .style("stroke", "black")})
+                 .on("dblclick",function(){
+                                    d3.select("body").style("opacity", 1)
+
+                    d3.select(this).transition()
+                            .duration(500)
+                            .attr("width",250).attr("height",150)
+                            .attr("x",350).attr("y",10)
+                            .style("stroke")});
+        //   3
+        container.append("rect")
+                 .style("fill", "lightblue")
+                 .attr("width", 250).attr("height", 150)
+                 .attr("x",650).attr("y",10)
+                 .on("click", function(){
+                             d3.select("body").style("opacity", 0.5)
+
+                    d3.select(this).transition()
+                            .duration(500)
+                            .attr("x",250)
+                            .attr("width",600).attr("height",400)                            
+                            .style("stroke", "black")})
+                 .on("dblclick",function(){
+                                    d3.select("body").style("opacity", 1)
+
+                    d3.select(this).transition()
+                            .duration(500)
+                            .attr("width",250).attr("height",150)
+                            .attr("x",650).attr("y",10)
+                            .style("stroke")});
+        //   4
+        container.append("rect")
+                 .style("fill", "lightblue")
+                 .attr("width", 250).attr("height", 150)
+                 .attr("x",50).attr("y",210)
+                 .on("click", function(){
+                             d3.select("body").style("opacity", 0.5)
+
+                    d3.select(this).transition()
+                            .duration(500)
+                            .attr("x",250).attr("y",0)
+                            .attr("width",600).attr("height",400)                            
+                            .style("stroke", "black")})
+                 .on("dblclick",function(){
+                                    d3.select("body").style("opacity", 1)
+
+                    d3.select(this).transition()
+                            .duration(500)
+                            .attr("width",250).attr("height",150)
+                            .attr("x",50).attr("y",210)
+                            .style("stroke")});
+        //   5
+        container.append("rect")
+                 .style("fill", "lightblue")
+                 .attr("width", 250).attr("height", 150)
+                 .attr("x",350).attr("y",210)
+                 .on("click", function(){
+                             d3.select("body").style("opacity", 0.5)
+
+                    d3.select(this).transition()
+                            .duration(500)
+                            .attr("x",250).attr("y",0)
+                            .attr("width",600).attr("height",400)                            
+                            .style("stroke", "black")})
+                 .on("dblclick",function(){
+                                    d3.select("body").style("opacity", 1)
+
+                    d3.select(this).transition()
+                            .duration(500)
+                            .attr("width",250).attr("height",150)
+                            .attr("x",350).attr("y",210)
+                            .style("stroke")});
+        //   6
+        container.append("rect")
+                 .style("fill", "lightblue")
+                 .attr("width", 250).attr("height", 150)
+                 .attr("x",650).attr("y",210)
+                 .on("click", function(){
+                             d3.select("body").style("opacity", 0.5)
+
+                    d3.select(this).transition()
+                            .duration(500)
+                            .attr("x",250).attr("y",0)
+                            .attr("width",600).attr("height",400)                            
+                            .style("stroke", "black")})
+                 .on("dblclick",function(){
+                                    d3.select("body").style("opacity", 1)
+
+                    d3.select(this).transition()
+                            .duration(500)
+                            .attr("width",250).attr("height",150)
+                            .attr("x",650).attr("y",210)
+                            .style("stroke")});
+        //   7
+        container.append("rect")
+                 .style("fill", "lightblue")
+                 .attr("width", 250).attr("height", 150)
+                 .attr("x",50).attr("y",410)
+                 .on("click", function(){
+                             d3.select("body").style("opacity", 0.5)
+
+                    d3.select(this).transition()
+                            .duration(500)
+                            .attr("x",250).attr("y",0)
+                            .attr("width",600).attr("height",400)                            
+                            .style("stroke", "black")})
+                 .on("dblclick",function(){
+                                    d3.select("body").style("opacity", 1)
+
+                    d3.select(this).transition()
+                            .duration(500)
+                            .attr("width",250).attr("height",150)
+                            .attr("x",50).attr("y",410)
+                            .style("stroke")});
+        //   8
+        container.append("rect")
+                 .style("fill", "lightblue")
+                 .attr("width", 250).attr("height", 150)
+                 .attr("x",350).attr("y",410)
+                 .on("click", function(){
+                             d3.select("body").style("opacity", 0.5)
+
+                    d3.select(this).transition()
+                            .duration(500)
+                            .attr("x",250).attr("y",0)
+                            .attr("width",600).attr("height",400)                            
+                            .style("stroke", "black")})
+                 .on("dblclick",function(){
+                                    d3.select("body").style("opacity", 1)
+
+                    d3.select(this).transition()
+                            .duration(500)
+                            .attr("width",250).attr("height",150)
+                            .attr("x",350).attr("y",410)
+                            .style("stroke")});
+        //   9
+        container.append("rect")
+                 .style("fill", "lightblue")
+                 .attr("width", 250).attr("height", 150)
+                 .attr("x",650).attr("y",410)
+                 .on("click", function(){
+                             d3.select("body").style("opacity", 0.5)
+
+                    d3.select(this).transition()
+                            .duration(500)
+                            .attr("x",250).attr("y",0)
+                            .attr("width",600).attr("height",400)                            
+                            .style("stroke", "black")})
+                 .on("dblclick",function(){
+                                    d3.select("body").style("opacity", 1)
+
+                    d3.select(this).transition()
+                            .duration(500)
+                            .attr("width",250).attr("height",150)
+                            .attr("x",650).attr("y",410)
+                            .style("stroke")});
+        
+       
+
+    </script>
+<html>
+<head></head>
+<body>
+
+<div id="pieChart"></div>
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.4.4/d3.min.js"></script>
+<script src="d3pie.min.js"></script>
+<meta charset="utf-8">
+<script src="d3pie.min.js"></script>
+<meta charset="UTF-8">
+<script>
+var pie = new d3pie("pieChart", {
+	"header": {
+		"title": {
+			"text": "靠北北大",
+			"fontSize": 22,
+			"font": "cinzel"
+		},
+		"subtitle": {
+			"text": "靠北北大中靠北的比例",
+			"color": "#999999",
+			"fontSize": 10,
+			"font": "verdana"
+		},
+		"titleSubtitlePadding": 11
+	},
+	"footer": {
+		"color": "#999999",
+		"fontSize": 11,
+		"font": "open sans",
+		"location": "bottom-center"
+	},
+	"size": {
+		"canvasHeight": 448,
+		"canvasWidth": 639,
+		"pieInnerRadius": "27%",
+		"pieOuterRadius": "96%"
+	},
+	"data": {
+		"sortOrder": "random",
+		"content": [
+			{
+				"label": "小米電源",
+				"value": 20,
+				"color": "#7b6688"
+			},
+			{
+				"label": "單身",
+				"value": 20,
+				"color": "#d8d138"
+			},
+			{
+				"label": "小編",
+				"value": 3,
+				"color": "#0a6097"
+			},
+			{
+				"label": "法院閱覽室",
+				"value": 15,
+				"color": "#e98125"
+			},
+			{
+				"label": "期末考",
+				"value": 23,
+				"color": "#6ada6a"
+			},
+			{
+				"label": "人際關係",
+				"value": 34,
+				"color": "#635022"
+			},
+			{
+				"label": "北大團購",
+				"value": 14,
+				"color": "#2282c1"
+			},
+			{
+				"label": "北大居民",
+				"value": 15,
+				"color": "#64a61f"
+			},
+			{
+				"label": "靠北老師",
+				"value": 18,
+				"color": "#d0743c"
+			},
+			{
+				"label": "靠北同學",
+				"value": 34,
+				"color": "#a05c56"
+			},
+			{
+				"label": "靠北校狗",
+				"value": 12,
+				"color": "#961818"
+			}
+		]
+	},
+	"labels": {
+		"outer": {
+			"pieDistance": 32
+		},
+		"inner": {
+			"hideWhenLessThanPercentage": 2
+		},
+		"mainLabel": {
+			"font": "exo"
+		},
+		"percentage": {
+			"color": "#e1e1e1",
+			"font": "exo",
+			"decimalPlaces": 0
+		},
+		"value": {
+			"color": "#e1e1e1",
+			"font": "exo"
+		},
+		"lines": {
+			"enabled": true
+		}
+	},
+	"tooltips": {
+		"enabled": true,
+		"type": "placeholder",
+		"string": "{label}: {value}則",
+		"styles": {
+			"fadeInSpeed": 400,
+			"backgroundOpacity": 0.86,
+			"font": "lucida sans"
+		}
+	},
+	"effects": {
+		"load": {
+			"speed": 840
+		},
+		"pullOutSegmentOnClick": {
+			"effect": "linear",
+			"speed": 400,
+			"size": 15
+		}
+	},
+	"misc": {
+		"gradient": {
+			"enabled": true,
+			"percentage": 86,
+			"color": "#ffffff",
+            
+           "pieCenterOffset": {
+			"x": 225,
+            "y": 100
+           }
+		}
+	},
+	"callbacks": {}
+});
+</script>
+
+</body>
+</html>
+</body>
+</html>

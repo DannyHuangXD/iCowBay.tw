@@ -2,5 +2,5 @@
     require 'connect.php';
     $artiID = ＄mysqli->query("SELECT COUNT(*) from artiInfo;");
     $insert_sql = "INSERT INTO artiInfo (artiID, artitext) VALUES('$_POST[artiID]','$_POST[content]');";
-    $mysqli->query($insert_sql);
+    $result = $mysqli->query($insert_sql);
 ?>

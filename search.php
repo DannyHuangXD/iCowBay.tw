@@ -4,19 +4,8 @@
     $start_from = ($page-1) * 20;
     $sql_kw = $_REQUEST['sqlkw']; //keyword search variable
     $search_by = $_GET['lookup'];
-    if($search_by = "content"){
-        $sql = "select COUNT(*) FROM artiInfo WHERE artitext LIKE '%$sql_kw%';";
-        $sql_search = "SELECT * FROM artiInfo WHERE artitext LIKE '%$sql_kw%';";
-    }
-    else if($search_by = "aid"){
-        $sql = "select COUNT(*) FROM artiInfo WHERE artiID LIKE '$sql_kw';";
-        $sql_search = "SELECT * FROM artiInfo WHERE artiID LIKE '$sql_kw';";
-
-    }
-    else if($search_by = "uid"){
-        $sql = "select COUNT(*) FROM artiInfo WHERE id LIKE '$sql_kw';";
-        $sql_search = "SELECT * FROM artiInfo WHERE id LIKE '$sql_kw';";
-    };
+    $sql = "select COUNT(*) FROM artiInfo WHERE artitext LIKE '%$sql_kw%';";
+    $sql_search = "SELECT * FROM artiInfo WHERE artitext LIKE '%$sql_kw%';";
     $result = $mysqli->query($sql);
     $amount = $result->fetch_row();
     $results = $mysqli->query($sql_search);

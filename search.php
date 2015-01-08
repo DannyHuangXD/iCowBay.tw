@@ -21,7 +21,7 @@
                 if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
                 $start_from = ($page-1) * 20;
                 $sql_kw = $_REQUEST['sqlkw']; //keyword search variable
-                $sql_search = "SELECT * FROM artiInfo WHERE artitext LIKE '%$sql_kw%';";
+                $sql_search = "SELECT * FROM artiInfo WHERE artitext LIKE '%$sql_kw%' LIMIT $start_from, 20;";
                 $result = $mysqli->query($sql_search);
                 $rows = mysqli_num_rows($result);
             ?>
@@ -42,9 +42,21 @@
         </table>
         <?php
             $sql = "select COUNT(*) FROM artiInfo;";
+            $sql = "select COUNT(*) FROM artiInfo WHERE artitext LIKE '%$sql_kw%';";
             $result = $mysqli->query($sql);
+<<<<<<< HEAD
             $amount = mysqli_num_rows($result);
             echo "<span class='label label-info'>".$amount." results </span>";
+=======
+            $row = mysqli_fetch_row($result);
+            $total_records = $row[0];
+            $total_pages = ceil($total_records / 20);
+            echo "<nav><ul class = 'pagination'>";
+            for ($i=1; $i<=$total_pages; $i++) {
+                echo "<li><a href='search.php?sqlkw=". $sql_kw ."page=".$i."'>".$i."</a></li>";
+            }
+            echo "</ul></nav>";
+>>>>>>> FETCH_HEAD
         ?>
     </body>
 </html>

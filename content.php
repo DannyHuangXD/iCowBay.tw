@@ -3,9 +3,9 @@
     require 'scripts/connect.php';
     $result = $mysqli->query("SELECT * FROM artiInfo WHERE artiID LIKE '$id';");
     $record= mysqli_fetch_array($result);
-    $viewPlus = $record['view'] + 1;
+    $viewPlus = (int)$record['view'] + 1;
     $plusID = $record['artiID'];
-    $mysqli->query("UPDATE artiInfo SET views= '$viewPlus'+1 WHERE artiID = '$plusID';");
+    $mysqli->query("UPDATE artiInfo SET views= '$viewPlus' WHERE artiID = '$plusID';");
 ?>
 <html>
     <head>

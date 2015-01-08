@@ -5,7 +5,7 @@
     $record= mysqli_fetch_array($result);
     $viewPlus = $record['view'] + 1;
     $plusID = $record['artiID'];
-    $mysqli->query("UPDATE artiInfo SET views= $viewPlus WHERE artiID = $plusID;")
+    $mysqli->query("UPDATE artiInfo SET views= '$viewPlus' WHERE artiID = '$plusID';")
 ?>
 <html>
     <head>

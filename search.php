@@ -15,6 +15,7 @@
     </head>
     <body>
         <div id = "header" class="header"></div>
+        <h1 class="page-header">Results of "<?php echo $_REQUEST['sqlkw'];?>":</h1>
         <table class="table table-hover">
             <?php
                 require "scripts/connect.php";

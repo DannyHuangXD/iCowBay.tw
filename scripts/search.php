@@ -14,7 +14,7 @@
     </script>
     </head>
     <body>
-        <div id = "header" class="header"></div>
+        <div id = "header"></div>
         <table width = "900" border = "0.5" cellpadding = "1">
             <?php
                 require "connect.php";
@@ -43,7 +43,7 @@
             $total_records = $row[0];
             $total_pages = ceil($row / 20);
             for ($i=1; $i<=$total_pages; $i++) {
-                echo "<li class='success'><a href='search.php?page=".$i."'>".$i."</a></li> ";
+                echo "<a href='search.php?page=".$i."'>".$i."</a>";
             };
         ?>
     </body>

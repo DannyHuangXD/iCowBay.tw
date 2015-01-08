@@ -26,9 +26,9 @@
                 $rows = mysqli_num_rows($result);
             ?>
             <tr>
-                <td>id</td>
-                <td>content</td>
-                <td>Date-time</td>
+                <td>Post-ID</td>
+                <td>Content</td>
+                <td>Date-Time</td>
             </tr>
             <?php
             while ($row = mysqli_fetch_assoc($result)){

@@ -15,36 +15,7 @@
                 mysqli_free_result($result);
                 $mysqli->close();
             ?>
-           <?php if($rows){?>
-            <tr>
-                <td>artiID</td>
-                <td>Content</td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <?php while($rows = mysqli_fetch_assoc($result)){ ?>
-            <tr>
-                <td><? echo $rows['artiID'];?></td>
-                <td><? echo $rows['artitext'];?></td>
-            </tr>
-            <?php }; ?>
-            <tr>
-                <td>
-                <?php
-                    if($rows <= $pageSize) echo "1";
-                    else{
-                        for($i = 1; $i  <= pageCount; $i++)
-                            echo "{$i}&nbsp;&nbsp;";
-                    };
-                ?>
-                </td>
-            </tr>
-            <?php }; else{ ?>
-            <tr>
-                <td> Your search result is rip in pepperonis</td>
-            </tr>
-            <?php }; ?>        </table>
+            <p>AAAAAAAA?</p>
+        </table>
     </body>
 </html>

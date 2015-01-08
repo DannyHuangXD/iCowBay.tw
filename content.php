@@ -2,6 +2,7 @@
     $id = $_GET['id'];
     require 'scripts/connect.php';
     $result = $mysqli->query("SELECT * FROM artiInfo WHERE artiID LIKE '$id';");
+    $record= mysqli_fetch_array($result);
 ?>
 <html>
     <head>
@@ -21,10 +22,10 @@
         <div class="header"></div>
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h2 class="panel-title"><? echo $result['artiID']; ?></h2>
+                <h2 class="panel-title"><? echo $record['artiID']; ?></h2>
             </div>
             <div class="panel-body">
-                <? echo $result['artitext']; ?>
+                <? echo $record['artitext']; ?>
             </div>
         </div>
         <script>

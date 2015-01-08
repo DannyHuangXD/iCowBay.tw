@@ -11,7 +11,7 @@
                 $result = $mysqli->query($sql_search);
                 $rows = mysqli_num_rows($result);
                 $pageSize = 3;
-                $pageCount = celi($pageSize);
+                $pageCount = 4;
                 mysqli_free_result($result);
                 $mysqli->close($mysqli);
             ?>

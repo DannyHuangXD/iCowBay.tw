@@ -13,6 +13,7 @@
                 $pageSize = 3;
                 $pageCount = celi($rows/$pageSize);
                 mysqli_free_result($result);
+                $mysqli->close();
             ?>
            <?php if($rows){?>
             <tr>
@@ -28,22 +29,22 @@
                 <td><? echo $rows['artiID'];?></td>
                 <td><? echo $rows['artitext'];?></td>
             </tr>
-            <?php } ?>
+            <?php }; ?>
             <tr>
-                <td colspan="2">
+                <td>
                 <?php
                     if($rows <= $pageSize) echo "1";
                     else{
                         for($i = 1; $i  <= pageCount; $i++)
                             echo "{$i}&nbsp;&nbsp;";
-                    }
+                    };
                 ?>
                 </td>
             </tr>
-            <?php } else{ ?>
+            <?php }; else{ ?>
             <tr>
                 <td> Your search result is rip in pepperonis</td>
             </tr>
-            <?php } ?>        </table>
+            <?php }; ?>        </table>
     </body>
 </html>

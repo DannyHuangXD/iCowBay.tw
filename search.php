@@ -42,11 +42,7 @@
             $row = mysqli_fetch_row($result);
             $total_records = $row[0];
             $total_pages = ceil($total_records / 20);
-<<<<<<< HEAD:search.php
             echo "<ul class='pagination'>";
-=======
-            echo "<ul>";
->>>>>>> parent of 64dca39... dudududu:scripts/search.php
             for ($i=1; $i<=$total_pages; $i++) {
                 echo "<li><a href='search.php?page=".$i."'>".$i."</a></li>";
             };

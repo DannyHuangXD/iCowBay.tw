@@ -8,30 +8,31 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.1/d3.min.js"></script>
     <script>
     $(function(){
-      $("#header").load("../header.html");
-      $("#footer").load("../footer.html");
+      $("#header").load("header.html");
+      $("#footer").load("footer.html");
     });
     </script>
     </head>
     <body>
-        <div id = "header"></div>
+        <div id = "header" class="header"></div>
         <table width = "900" border = "0.5" cellpadding = "1">
             <?php
-                require "connect.php";
-                if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
+                require "scripts/connect.php";
+                if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
                 $start_from = ($page-1) * 20;
                 $sql_kw = $_REQUEST['sqlkw']; //keyword search variable
                 $sql_search = "SELECT * FROM artiInfo WHERE artitext LIKE '%$sql_kw%';";
                 $result = $mysqli->query($sql_search);
+                $rows = mysqli_num_rows($result);
             ?>
             <tr><td>ID</td><td>content</td></tr>
             <?php
             while ($row = mysqli_fetch_assoc($result)){
             ?>
-                <tr>
-                    <td><? echo $row["artiID"]; ?></td>
-                    <td><? echo $row["artitext"]; ?></td>
-                    <td><? echo $row["post_time"]; ?></td>
+                <tr class="info">
+                    <td class="info"><? echo $row["artiID"]; ?></td>
+                    <td class="info"><? echo $row["artitext"]; ?></td>
+                    <td class="info"><? echo $row["post_time"]; ?></td>
                 </tr>
             <? }; ?>
         </table>
@@ -40,12 +41,12 @@
             $result = $mysqli->query($sql);
             $row = mysqli_fetch_row($result);
             $total_records = $row[0];
-            $total_pages = ceil($total_records / 20);
-            echo "<ul class='pagination'>";
+            $total_pages = ceil($row / 20);
+            echo "<nav><ul class='pagination'>"
             for ($i=1; $i<=$total_pages; $i++) {
-                echo "<li><a href='search.php?page=".$i."'>".$i."</a></li>";
+                echo "<li><a href='search.php?page=".$i."'>".$i."</a></li> ";
             };
-            echo "</ul>";
+            echo "</ul></nav>";
         ?>
     </body>
 </html>

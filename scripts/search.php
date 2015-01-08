@@ -6,48 +6,33 @@
         <table width = "900" border = "0.5" cellpadding = "1">
             <?php
                 require "connect.php";
+                if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
+                $start_from = ($page-1) * 20;
                 $sql_kw = $_REQUEST['sqlkw']; //keyword search variable
                 $sql_search = "SELECT * FROM artiInfo WHERE artitext LIKE '%$sql_kw%'";
                 $result = $mysqli->query($sql_search);
                 $rows = mysqli_num_rows($result);
-                $pageSize = 3;
-                $pageCount = 4;
-                mysqli_free_result($result);
-                $mysqli->close($mysqli);
             ?>
+            <tr><td>ID</td><td>content</td></tr>
+            <?php
+            while ($row = mysqli_fetch_assoc($result)){
+            ?>
+                <tr>
+                    <td><? echo $row["artiID"]; ?></td>
+                    <td><? echo $row["artitext"]; ?></td>
+                </tr>
+            <? }; ?>
+        </table>
+        <?php
+            $sql = "select count(*) FROM artiInfo";
+            $result = $mysqli->query($sql);
+            $row = mysqli_fetch_row($result);
+            $total_records = $row[0];
+            $total_pages = ceil($total_records / 20);
 
-           <?php if($rows){?>
-            <tr>
-                <td>artiID</td>
-                <td>Content</td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <?php while($rows = mysqli_fetch_assoc($result)){ ?>
-            <tr>
-                <td><? echo $rows['artiID'];?></td>
-                <td><? echo $rows['artitext'];?></td>
-            </tr>
-            <?php }; ?>
-            <tr>
-                <td>
-                <?php
-                    if($rows <= $pageSize) echo "1";
-                    else{
-                        for($i = 1; $i  <= pageCount; $i++)
-                            echo "{$i}&nbsp;&nbsp;";
-                    };
-                ?>
-                </td>
-            </tr>
-            <?php }; else{ ?>
-            <tr>
-                <td> Your search result is rip in pepperonis</td>
-            </tr>
-            <?php }; ?>
-             </table>
-        <p>AAAAAAAA?</p>
+            for ($i=1; $i<=$total_pages; $i++) {
+                echo "<a href='search.php?page=".$i."'>".$i."</a> ";
+            };
+        ?>
     </body>
 </html>

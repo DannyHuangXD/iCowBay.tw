@@ -15,7 +15,7 @@
                 mysqli_free_result($result);
                 $mysqli->close();
             ?>
-            <p>AAAAAAAA?</p>
         </table>
+        <p>AAAAAAAA?</p>
     </body>
 </html>

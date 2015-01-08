@@ -29,7 +29,7 @@
             <?php
             while ($row = mysqli_fetch_assoc($result)){
             ?>
-                <tr class="active">
+                <tr>
                     <td><? echo $row["artiID"]; ?></td>
                     <td><? echo $row["artitext"]; ?></td>
                     <td><? echo $row["post_time"]; ?></td>

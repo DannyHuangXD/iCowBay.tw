@@ -29,7 +29,7 @@
                 <h2 class="panel-title"><? echo "#".$record['artiID']; ?></h2>
             </div>
             <div class="panel-body">
-                <? echo "<p>".$record['artitext']."</p>"; ?>
+                <? echo $record['artitext']; ?>
             </div>
             <div class="panel-footer">
                 <? echo "Views: ".$record['view']; ?>

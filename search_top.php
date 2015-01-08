@@ -31,7 +31,7 @@
                     $sql = "SELECT * FROM artiInfo ORDER BY artiID DESC;";
                 }
                 else if($top == 'likes'){
-                    $sql = "SELECT * FROM artiInfo ORDER BY like DESC;";
+                    $sql = "SELECT * FROM artiInfo ORDER BY likes DESC;";
                 }
                 $result = $mysqli->query($sql);
                 $rows = mysqli_num_rows($result);

@@ -4,13 +4,7 @@
     $start_from = ($page-1) * 20;
     $sql_kw = $_REQUEST['sqlkw']; //keyword search variable
     $search_by = $_GET['lookup'];
-    $sql = "select COUNT(*) FROM artiInfo WHERE artitext LIKE '%$sql_kw%';";
     $sql_search = "SELECT * FROM artiInfo WHERE artitext LIKE '%$sql_kw%';";
-    $result = $mysqli->query($sql);
-    $row = mysql_fetch_row($result);
-    $total_records = $row[0];
-    $total_pages = ceil($total_records / 20);
-    $amount = $result->fetch_row();
     $results = $mysqli->query($sql_search);
     $rows = mysqli_num_rows($results);
     function echo_content($x){
@@ -76,6 +70,12 @@
             <? }; ?>
         </table>
         <?php
+            $result = $mysqli->query($sql);
+            $row = mysql_fetch_row($result);
+            $total_records = $row[0];
+            $total_pages = ceil($total_records / 20);
+            $amount = $result->fetch_row();
+            $sql = "select COUNT(*) FROM artiInfo WHERE artitext LIKE '%$sql_kw%';";
             for ($i=1; $i<=$total_pages; $i++) {
                         echo "<a href='search.php?page=".$i."&sqlkw=".$sql_kw."'>".$i."</a> ";
             };

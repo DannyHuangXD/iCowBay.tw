@@ -26,6 +26,7 @@
       <ul class="nav navbar-nav navbar-right">
           <form action ="search.php" method = "GET" class="navbar-form navbar-left" role="search">
             <div class="input-group">
+              <input type="hidden" name="action" value="page">
               <input type="text" class="form-control" name="sqlkw" value="<?php echo (isset($_GET['sqlkw'])? $_GET['sqlkw'] : ''); ?>">
               <div class="input-group-btn">
                   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">

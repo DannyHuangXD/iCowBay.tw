@@ -55,7 +55,7 @@
             $sql = "select COUNT(*) FROM artiInfo WHERE artitext LIKE '%$sql_kw%';";
             $result = $mysqli->query($sql);
             $amount = $result->fetch_row();
-            echo "<span class='label label-info'>".$amount[0]." results </span>";
+            echo "<span class='badge'>".$amount[0]." results </span>";
         ?>
     </body>
 </html>

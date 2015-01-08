@@ -32,7 +32,7 @@
         <h1 class="page-header">
             Results of "<?php echo $_REQUEST['sqlkw'];?>":
             <?php
-                echo "<span class='label label-info'>".$amount[0]." results </span>"
+                echo "<span class='badge'>".$amount[0]."</span>"
             ;?>
         </h1>
         <table class="table table-hover">

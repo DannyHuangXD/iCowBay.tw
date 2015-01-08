@@ -23,10 +23,5 @@
         $insert_sql = "INSERT INTO artiInfo" ."(artiID, artitext)"."VALUES('$id', '$contents');";
         $result = $mysqli->query($insert_sql);
     ?>
-        <? if($result){ ?>
-        <p>Success</p>
-        <? }; else{ ?>
-        <p>Failed</p>
-        <? }; ?>
     </body>
 </html>

@@ -21,7 +21,7 @@
                 if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
                 $start_from = ($page-1) * 20;
                 $sql_kw = $_REQUEST['sqlkw']; //keyword search variable
-                $sql_search = "SELECT * FROM artiInfo WHERE artitext LIKE '%$sql_kw%'";
+                $sql_search = "SELECT * FROM artiInfo WHERE artitext LIKE '%$sql_kw%' LIMIT '$start_from', 20";
                 $result = $mysqli->query($sql_search);
                 $rows = mysqli_num_rows($result);
             ?>
@@ -30,9 +30,9 @@
             while ($row = mysqli_fetch_assoc($result)){
             ?>
                 <tr class="active">
-                    <td class="active"><? echo $row["artiID"]; ?></td>
-                    <td class="active"><? echo $row["artitext"]; ?></td>
-                    <td class="active"><? echo $row["post_time"]; ?></td>
+                    <td><? echo $row["artiID"]; ?></td>
+                    <td><? echo $row["artitext"]; ?></td>
+                    <td><? echo $row["post_time"]; ?></td>
                 </tr>
             <? }; ?>
         </table>

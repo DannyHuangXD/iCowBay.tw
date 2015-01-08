@@ -72,5 +72,14 @@
                 </tr>
             <? }; ?>
         </table>
+        <?php
+            $rs_result = $mysqli->query($sql);
+            $row = mysql_fetch_row($rs_result);
+            $total_records = $row[0];
+            $total_pages = ceil($total_records / 20);
+            for ($i=1; $i<=$total_pages; $i++) {
+                        echo "<a href='search.php?page=".$i."&sqlkw=".$sql_kw."'>".$i."</a> ";
+            };
+        ?>
     </body>
 </html>

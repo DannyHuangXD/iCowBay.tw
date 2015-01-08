@@ -8,8 +8,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.1/d3.min.js"></script>
     <script>
     $(function(){
-      $("#header").load("header.html");
-      $("#footer").load("footer.html");
+      $("#header").load("../header.html");
+      $("#footer").load("../footer.html");
     });
     </script>
     </head>

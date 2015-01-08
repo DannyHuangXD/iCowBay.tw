@@ -1,3 +1,16 @@
+<?php
+    require "scripts/connect.php";
+    if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
+    $start_from = ($page-1) * 20;
+    $sql_kw = $_REQUEST['sqlkw']; //keyword search variable
+    $sql_search = "SELECT * FROM artiInfo WHERE artitext LIKE '%$sql_kw%';";
+    $result = $mysqli->query($sql_search);
+    $rows = mysqli_num_rows($result);
+    $sql = "select COUNT(*) FROM artiInfo WHERE artitext LIKE '%$sql_kw%';";
+    $result = $mysqli->query($sql);
+    $amount = $result->fetch_row();
+?>
+
 <html>
     <head>
         <meta charset="utf-8">
@@ -15,17 +28,14 @@
     </head>
     <body>
         <div id = "header" class="header"></div>
-        <h1 class="page-header">Results of "<?php echo $_REQUEST['sqlkw'];?>":</h1>
-        <table class="table table-hover">
+        <h1 class="page-header">
+            Results of "<?php echo $_REQUEST['sqlkw'];?>":
             <?php
-                require "scripts/connect.php";
-                if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
-                $start_from = ($page-1) * 20;
-                $sql_kw = $_REQUEST['sqlkw']; //keyword search variable
-                $sql_search = "SELECT * FROM artiInfo WHERE artitext LIKE '%$sql_kw%';";
-                $result = $mysqli->query($sql_search);
-                $rows = mysqli_num_rows($result);
-            ?>
+                echo "<span class='label label-info'>".$amount[0]." results </span>"
+            ;?>
+        </h1>
+        <table class="table table-hover">
+
             <tr>
                 <td>Post-ID</td>
                 <td>Content</td>
@@ -41,11 +51,5 @@
                 </tr>
             <? }; ?>
         </table>
-        <?php
-            $sql = "select COUNT(*) FROM artiInfo WHERE artitext LIKE '%$sql_kw%';";
-            $result = $mysqli->query($sql);
-            $amount = $result->fetch_row();
-            echo "<span class='label label-info'>".$amount[0]." results </span>";
-        ?>
     </body>
 </html>

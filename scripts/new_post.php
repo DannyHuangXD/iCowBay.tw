@@ -15,7 +15,7 @@
         </script>
     </head>
     <body>
-        <div class="header"></div>
+        <div id="header" class="header"></div>
         <?php
         require 'connect.php';
             $result = $mysqli->query("SELECT * from artiInfo;");
@@ -23,7 +23,7 @@
         $contents = $_POST['content'];
         $insert_sql = "INSERT INTO artiInfo" ."(artiID, artitext)"."VALUES('$id', '$contents');";
         $result = $mysqli->query($insert_sql);
-        echo "<p> It's done. Your article ID is".$id.".</p>";
+        echo "<div class='alert alert-success' role='alert'> It's done. Your article ID is ".$id.".</div>";
     ?>
     </body>
 </html>

@@ -14,7 +14,7 @@
     </script>
     </head>
     <body>
-        <div class="header"></div>
+        <div id = "header" class="header"></div>
         <table width = "900" border = "0.5" cellpadding = "1">
             <?php
                 require "connect.php";
@@ -29,9 +29,10 @@
             <?php
             while ($row = mysqli_fetch_assoc($result)){
             ?>
-                <tr>
-                    <td><? echo $row["artiID"]; ?></td>
-                    <td><? echo $row["artitext"]; ?></td>
+                <tr class="info">
+                    <td class="info"><? echo $row["artiID"]; ?></td>
+                    <td class="info"><? echo $row["artitext"]; ?></td>
+                    <td class="info"><? echo $row["post_time"]; ?></td>
                 </tr>
             <? }; ?>
         </table>
@@ -40,11 +41,12 @@
             $result = $mysqli->query($sql);
             $row = mysqli_fetch_row($result);
             $total_records = $row[0];
-            $total_pages = ceil($total_records / 20);
-
+            $total_pages = ceil($row / 20);
+            echo "<nav><ul class='pagination'>"
             for ($i=1; $i<=$total_pages; $i++) {
-                echo "<a href='search.php?page=".$i."'>".$i."</a> ";
+                echo "<li><a href='search.php?page=".$i."'>".$i."</a></li> ";
             };
+            echo "</ul></nav>";
         ?>
     </body>
 </html>

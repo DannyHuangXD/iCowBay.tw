@@ -15,35 +15,13 @@
     </script>
     </head>
 <body>
-    <div id="header"></div>
+    <div id="header" ></div>
+    <div class="jumbotron" style="background-color:lightblue;">
+  <h1 style="text-align:center;">iCowBay.tw</h1>
+        <p style="text-align:center;">A place where you can cowbay whatever you want</p>
+  <p style="text-align:center;"><a class="btn btn-primary btn-lg" href="search_top.php?top=all" role="button">Let's Cowbay</a></p>
+</div>
     <div class="container" id="articles"></div>
     <script src="http://d3js.org/d3.v3.min.js"></script>
-    <script>
-        var w = 350, h = 150;
-        var i = 0;
-        var dataset = [3, 59, 453, 34, 233];
-        var container = d3.select("#articles")
-                        .append("svg")
-                        .attr("width", w)
-                        .attr("height", h);
-        container.selectAll("rect")
-                 .data(dataset).enter()
-                 .append("rect")
-                 .style("stroke", "black")
-                 .style("fill", "lightblue")
-                 .attr("width", 175)
-                 .attr("height", 75)
-                 .on("click", function(){
-                d3.select("svg").transition()
-                           .duration(500)
-                           .attr("width", 800)
-                           .attr("height", 300);
-                d3.select(this).transition()
-                           .duration(500)
-                           .attr("width", 800)
-                           .attr("height", 300)
-                           .style("stroke", "red")});
-
-    </script>
-</body>
+ </body>
 </html>

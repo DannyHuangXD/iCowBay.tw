@@ -39,7 +39,9 @@
             <tr>
                 <td>Post-ID</td>
                 <td>Content</td>
+                <td>Author</td>
                 <td>Date-Time</td>
+                <td>Views</td>
             </tr>
             <?php
             while ($row = mysqli_fetch_assoc($result)){
@@ -47,7 +49,9 @@
                 <tr>
                     <td><? echo "<a href='content.php?id=".$row["artiID"]."'>".$row["artiID"]."</a>"; ?></td>
                     <td><? echo $row["artitext"]; ?></td>
+                    <td><? echo $row["id"]; ?></td>
                     <td><? echo $row["post_time"]; ?></td>
+                    <td><? echo $row["view"]; ?></td>
                 </tr>
             <? }; ?>
         </table>

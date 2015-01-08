@@ -27,6 +27,7 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h2 class="panel-title"><? echo "#".$record['artiID']; ?></h2>
+                <span class="badge"><? echo "by ".$record['id']; ?></span>
             </div>
             <div class="panel-body">
                 <? echo $record['artitext']; ?>

@@ -1,12 +1,32 @@
 <html>
-<body>
-    <?php
-    require 'connect.php';
-        $result = $mysqli->query("SELECT * from artiInfo;");
-    $id = 1 + mysqli_num_rows($result);
-    $contents = $_POST['content'];
-    $insert_sql = "INSERT INTO artiInfo" ."(artiID, artitext)"."VALUES('$id', '$contents');";
-    $result = $mysqli->query($insert_sql);
-?>
-</body>
+    <head>
+        <meta charset = "utf-8">
+        <title>Post New Article</title>
+        <link href="/css/new_post.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.1/d3.min.js"></script>
+        <script>
+        $(function(){
+          $("#header").load("header.html");
+          $("#footer").load("footer.html");
+        });
+        </script>
+    </head>
+    <body>
+        <?php
+        require 'connect.php';
+            $result = $mysqli->query("SELECT * from artiInfo;");
+        $id = 1 + mysqli_num_rows($result);
+        $contents = $_POST['content'];
+        $insert_sql = "INSERT INTO artiInfo" ."(artiID, artitext)"."VALUES('$id', '$contents');";
+        $result = $mysqli->query($insert_sql);
+    ?>
+        <? if($result){ ?>
+        <p>Success</p>
+        <? }; else{ ?>
+        <p>Failed</p>
+        <? }; ?>
+    </body>
 </html>

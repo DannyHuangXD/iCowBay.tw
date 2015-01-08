@@ -1,8 +1,20 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <title>Results</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.1/d3.min.js"></script>
+    <script>
+    $(function(){
+      $("#header").load("header.html");
+      $("#footer").load("footer.html");
+    });
+    </script>
     </head>
     <body>
+        <div class="header"></div>
         <table width = "900" border = "0.5" cellpadding = "1">
             <?php
                 require "connect.php";

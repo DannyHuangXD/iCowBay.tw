@@ -12,30 +12,30 @@
       $("#footer").load("footer.html");
     });
     </script>
+    <?php
+        require "scripts/connect.php";
+        if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
+        if(isset($_GET["top"])){
+            $top = $_GET["top"];
+        }
+        $start_from = ($page-1) * 20;
+        if($top == 'most'){
+            $sql = "SELECT * FROM artiInfo ORDER BY view DESC;";
+        }
+        else if($top == 'new'){
+            $sql = "SELECT * FROM artiInfo ORDER BY artiID DESC;";
+        }
+        else if($top == 'likes'){
+            $sql = "SELECT * FROM artiInfo ORDER BY likes DESC;";
+        }
+        $result = $mysqli->query($sql);
+        $rows = mysqli_num_rows($result);
+    ?>
     </head>
     <body>
         <div id = "header" class="header"></div>
-        <h1 class="page-header">Results of "<?php echo $_REQUEST['sqlkw'];?>":</h1>
+        <h1 class="page-header">Sorted by "<?php echo ＄top;?>":</h1>
         <table class="table table-hover">
-            <?php
-                require "scripts/connect.php";
-                if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
-                if(isset($_GET["top"])){
-                    $top = $_GET["top"];
-                }
-                $start_from = ($page-1) * 20;
-                if($top == 'most'){
-                    $sql = "SELECT * FROM artiInfo ORDER BY view DESC;";
-                }
-                else if($top == 'new'){
-                    $sql = "SELECT * FROM artiInfo ORDER BY artiID DESC;";
-                }
-                else if($top == 'likes'){
-                    $sql = "SELECT * FROM artiInfo ORDER BY likes DESC;";
-                }
-                $result = $mysqli->query($sql);
-                $rows = mysqli_num_rows($result);
-            ?>
             <tr>
                 <td>Post-ID</td>
                 <td>Content</td>

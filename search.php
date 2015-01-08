@@ -18,6 +18,10 @@
             $y=substr($x,0,strpos($x,"</a>")).'...';
             echo $y;
         }
+        else if(strlen($x) > 30 && strpos($x,"</img>")){
+            $y=substr($x,0,strpos($x,"</img>")).'...';
+            echo $y;
+        }
         else{
             $y=substr($x,0,30).'...';
             echo $y;

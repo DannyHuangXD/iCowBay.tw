@@ -30,6 +30,15 @@
         }
         $result = $mysqli->query($sql);
         $rows = mysqli_num_rows($result);
+        function echo_content($x){
+        if(strlen($x)<=30){
+            echo $x;
+        }
+        else{
+            $y=substr($x,0,30).'...';
+            echo $y;
+        }
+    }
     ?>
     </head>
     <body>
@@ -39,7 +48,7 @@
             <tr>
                 <td>Post-ID</td>
                 <td>Content</td>
-                <td>Author</td>
+                <td>By</td>
                 <td>Date-Time</td>
                 <td>Views</td>
             </tr>
@@ -48,7 +57,7 @@
             ?>
                 <tr>
                     <td><? echo "<a href='content.php?id=".$row["artiID"]."'>".$row["artiID"]."</a>"; ?></td>
-                    <td><? echo $row["artitext"]; ?></td>
+                    <td><? echo echo_content($row["artitext"]); ?></td>
                     <td><? echo $row["id"]; ?></td>
                     <td><? echo $row["post_time"]; ?></td>
                     <td><? echo $row["view"]; ?></td>

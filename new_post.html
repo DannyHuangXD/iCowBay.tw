@@ -3,19 +3,20 @@
     <head>
         <title>POST A NEW ARTICLE</title>
         <link href="/css/new_post.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.1/d3.min.js"></script>
         <meta charset = "utf-8">
     </head>
     <body>
-        <h1>Post an article</h1>
+        <div class="page-header"><h1>Post an article</h1></div>
         <div id = "create_post">
             <form action="scripts/new_post.php" method="POST">
-            <fieldset>
-                <label for="content"> content:</label>
-                <textarea class="form-control" name = "content" rows="3"></textarea>
-                </fieldset>
+            <textarea class="form-control" name = "content" placeholder="Your spicy memes :)"></textarea>
             <br />
             <fieldset class="center" id="submit">
-                <input type="submit" value= "Submit" />
+                <input class="btn btn-default navbar-btn" type="submit" value= "Submit" />
             </fieldset>
             </form>
         </div>

@@ -35,7 +35,7 @@
             while ($row = mysqli_fetch_assoc($result)){
             ?>
                 <tr>
-                    <td><? echo $row["artiID"]; ?></td>
+                    <td><? echo "<a href='content.php?id=".$row["artiID"]."'>".$row["artiID"]."</a>"; ?></td>
                     <td><? echo $row["artitext"]; ?></td>
                     <td><? echo $row["post_time"]; ?></td>
                 </tr>

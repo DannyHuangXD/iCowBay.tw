@@ -1,5 +1,5 @@
 <?php
-    $id = _REQUEST['artiID'];
+    $id = $_GET['id'];
     require 'scripts/connect.php';
     $result = $mysqli->query("SELECT * FROM artiInfo WHERE artiID LIKE '$id';");
 ?>

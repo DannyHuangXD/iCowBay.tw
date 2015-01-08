@@ -20,13 +20,13 @@
         }
         $start_from = ($page-1) * 20;
         if($top == 'most'){
-            $sql = "SELECT * FROM artiInfo ORDER BY view DESC;";
+            $sql = "SELECT * FROM artiInfo ORDER BY view DESC LIMIT 1, 20;";
         }
         else if($top == 'new'){
-            $sql = "SELECT * FROM artiInfo ORDER BY artiID DESC;";
+            $sql = "SELECT * FROM artiInfo ORDER BY artiID DESC LIMIT 1,20;";
         }
         else if($top == 'likes'){
-            $sql = "SELECT * FROM artiInfo ORDER BY likes DESC;";
+            $sql = "SELECT * FROM artiInfo ORDER BY likes DESC LIMIT 1, 20;";
         }
         $result = $mysqli->query($sql);
         $rows = mysqli_num_rows($result);
@@ -51,11 +51,5 @@
                 </tr>
             <? }; ?>
         </table>
-        <?php
-            $sql = "select COUNT(*) FROM artiInfo WHERE artitext LIKE '%$sql_kw%';";
-            $result = $mysqli->query($sql);
-            $amount = $result->fetch_row();
-            echo "<span class='badge'>".$amount[0]." results </span>";
-        ?>
     </body>
 </html>

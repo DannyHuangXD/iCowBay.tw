@@ -8,10 +8,11 @@
                 require "connect.php";
                 $sql_kw = $_REQUEST['sqlkw']; //keyword search variable
                 $sql_search = "SELECT * FROM artiInfo WHERE artitext LIKE '%$sql_kw%'";
-                $result = $mysqli->query($sql_search) or die ("ERROR");
+                $result = $mysqli->query($sql_search);
                 $rows = mysqli_num_rows($result);
                 $pageSize = 3;
-                $pageCount = celi($rows / $pageSize);
+                $pageCount = celi($rows/$pageSize);
+                mysqli_free_result($result);
             ?>
            <?php if($rows){?>
             <tr>
@@ -22,10 +23,10 @@
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
             </tr>
-            <?php while($row = mysqli_fetch_array($result)){ ?>
+            <?php while($rows = mysqli_fetch_assoc($result)){ ?>
             <tr>
-                <td><?=$rows['artiID']?></td>
-                <td><?=$rows['artitext']?></td>
+                <td><? echo $rows['artiID'];?></td>
+                <td><? echo $rows['artitext'];?></td>
             </tr>
             <?php } ?>
             <tr>

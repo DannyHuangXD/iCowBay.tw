@@ -33,16 +33,20 @@
         }
         $result = $mysqli->query($sql);
         $rows = mysqli_num_rows($result);
-        function echo_content($x){
+    function echo_content($x){
         if(strlen($x)<=30){
             echo $x;
         }
-        else if(strlen($x) > 30 && strpos($x,"</a>")){
-            $y=substr($x,0,strpos($x,"</a>")).'...';
+        else if(strlen($x) > 30 && strpos($x,"</a>") > 30 && strpos($x,"</a>")){
+            $y=substr($x,strpos($x,"<a>"),strpos($x,"</a>")).'...';
             echo $y;
         }
-        else if(strlen($x) > 30 && strpos($x,"</img>")){
-            $y=substr($x,0,strpos($x,"</img>")).'...';
+        else if(strpos($x,"</img>" && strpos($x,"</img>") > 30 && strpos($x,"</img>") > 30)){
+            $y=substr($x,strpos($x,"<img>"),strpos($x,"</img>")).'...';
+            echo $y;
+        }
+        else if(strlen($x) > 30 && strpos($x,"</iframe>") >30 && strpos($x,"</iframe>")){
+            $y=substr($x,strpos($x,"</iframe>"),strpos($x,"</iframe>")).'...';
             echo $y;
         }
         else{

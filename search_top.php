@@ -29,7 +29,7 @@
             $sql = "SELECT * FROM artiInfo ORDER BY likes DESC LIMIT 0, 20;";
         }
         else if($top == 'all'){
-            $sql = "SELECT * FROM artiInfo;";
+            $sql = "SELECT * FROM artiInfo ORDER BY DSEC;";
         }
         $result = $mysqli->query($sql);
         $rows = mysqli_num_rows($result);
